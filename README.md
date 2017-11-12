@@ -15,13 +15,20 @@ Bobst challenge
 Defaults :  Letter missing, impression ink stain</p>
 
 <h2>Methodology</h2>
-1) Align all images with a reference : ECC
-2) Default recognition by ROI : text areas
-3) Threshold, Normalize
+1) Align all images with a reference using ECC algorithms
+
+2) ROI Parsing : Apply ECC by ROI (text areas) 
+
+3) Normalize, Threshold, Substract to get the difference
+
+4) Save the BW image with "activated" areas that correspond to defects.
+
+5) Crop ROI to get original missing/added/swapped letter
 
 Other pists explored :
-SIFT, ORD...
+SIFT, ORB, Standard Deviation...
 
 
 <h2>Results</h2>
-Mainly letters default are detected. Some false negative appear, due to differences between images.
+Mainly deleted letters are detected. Some false positive appear (dots, spots on the image). 
+We also managed to detect some swapped letters.
